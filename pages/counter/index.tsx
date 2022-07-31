@@ -3,14 +3,6 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Button from '../../components/button'
 
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch('http://localhost:8000')
-  const data = await res.json()
-  return { props: { data } }
-}
-
 export default function Home({ data }: any) {
   const [count, setCount] = useState(0);
 
